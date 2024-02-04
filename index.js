@@ -21,6 +21,10 @@ dotenv.config();
 
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  next();
+});
 // Connect to MongoDB Atlas (replace with your MongoDB Atlas connection string)
 mongoose.connect(process.env.YOUR_MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
