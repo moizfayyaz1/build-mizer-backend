@@ -32,7 +32,7 @@ mongoose.connect(process.env.YOUR_MONGODB_URI, { useNewUrlParser: true, useUnifi
 
   app.use(
     cors({
-      origin: ["http://localhost:3000", "https://build-mizer.vercel.app/"],
+      origin: ["http://localhost:3000", "https://build-mizer.vercel.app/login"],
       methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
     })
