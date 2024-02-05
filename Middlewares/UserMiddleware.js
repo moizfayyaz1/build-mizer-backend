@@ -6,7 +6,6 @@ dotenv.config();
 export const userResponse = async (req, res) => {
   try {
     const token = req.cookies.token;
-
     if (!token) {
       return res.status(401).json({ status: false, message: 'Token not found' });
     }

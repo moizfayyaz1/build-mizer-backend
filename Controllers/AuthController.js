@@ -13,9 +13,6 @@ export const Signup = async (req, res, next) => {
       }
 
       const user = await User.create({  firstname,lastname,email,password,createdAt });
-
-      
-
       const token = createSecretToken(user._id);
       res.cookie("token", token, {
         withCredentials: true,
@@ -53,6 +50,7 @@ export const Signup = async (req, res, next) => {
       }
   
       const token = createSecretToken(user._id);
+      
       res.cookie('token', token, {
         httpOnly: false, // Set to true for added security
         sameSite: 'None',
