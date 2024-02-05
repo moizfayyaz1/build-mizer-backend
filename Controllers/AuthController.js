@@ -50,7 +50,7 @@ export const Signup = async (req, res, next) => {
       }
   
       const token = createSecretToken(user._id);
-      
+      console.log(token);
       res.cookie('token', token, {
         httpOnly: false, // Set to true for added security
         sameSite: 'None',
